@@ -1,0 +1,33 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "fec58260-8d6f-4250-94de-a1b1f7254dc4",
+            "actions": [
+                {
+                    "name": "Arms",
+                    "type": "Button",
+                    "id": "227e2465-323b-4b7a-92a2-ae9090ba0278",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d1fbfca4-48b4-45be-90d8-f0a326a7997d",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arms",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
