@@ -63,9 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\LWRP\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Arms.cs" />
+    <Compile Include="Assets\Scripts\Grab.cs" />
     <Compile Include="Assets\Scripts\Input\Controls.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\Scripts\Test.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Jacques' PC/Documents/Unity/SLINK-E/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
