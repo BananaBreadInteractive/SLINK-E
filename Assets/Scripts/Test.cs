@@ -10,7 +10,7 @@ public class Test : MonoBehaviour
     private Vector2 arms;
     private Vector3 armPos;
     private float startTime;
-    private float speed = 20f;
+    private float speed = 15f;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -44,10 +44,13 @@ public class Test : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        //float distanceCovered = (Time.time - startTime) * speed;
+    { 
         Vector2 myVector = new Vector2(arms.x, arms.y) * Time.deltaTime *speed;
-        rb.MovePosition((Vector2) transform.position + (myVector));
+
+        //Vector3.MoveTowards(transform.position, myVector, speed);
+        //rb.AddForce(myVector * speed);
+        rb.MovePosition((Vector2)transform.position + (myVector));
+
         Vector3.Lerp(armPos, transform.position, 1f);
     }
 }
