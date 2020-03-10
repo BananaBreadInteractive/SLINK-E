@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Grab.cs" />
      <Compile Include="Assets\Scripts\Input\Controls.cs" />
      <Compile Include="Assets\Scripts\Input\SimpleCameraController.cs" />
+     <None Include="Assets\HelloWorld.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/355443/SLINK-E/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
