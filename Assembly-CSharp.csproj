@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\LWRP\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\Scripts\AdamsScript.cs" />
      <Compile Include="Assets\Scripts\Arms.cs" />
      <Compile Include="Assets\Scripts\Grab.cs" />
      <Compile Include="Assets\Scripts\Input\Controls.cs" />
