@@ -36,11 +36,6 @@ public class Arms : MonoBehaviour
         _controls.Player.Enable();
         _controls.Player.Arms.performed += ctx => arms = ctx.ReadValue<Vector2>(); // Reads the value of the left stick as x and y values
         _controls.Player.Arms.canceled += ctx => arms = Vector2.zero; // Set the vector to zero when the stick is not being controlled
-
-        _controls.Player.LeftHand.performed += ctx => Attatch();
-        _controls.Player.RightHand.performed += ctx => Attatch();
-        _controls.Player.LeftHand.canceled += ctx => Detatch();
-        _controls.Player.RightHand.canceled += ctx => Detatch();
     }
     
     // Stops listening for Inputs when no buttons are being pressed
@@ -60,38 +55,6 @@ public class Arms : MonoBehaviour
 
         leftCanGrab = Physics2D.OverlapCircle(leftHand.transform.position, radius, WhatIsGrab);
         rightCanGrab = Physics2D.OverlapCircle(rightHand.transform.position, radius, WhatIsGrab);
-    }
-
-    // Locks the rigidbody of the hands in place when the shoulder buttons are pressed
-    void Attatch()
-    {
-        //if (leftCanGrab)
-        //{
-        //    rbL.bodyType = RigidbodyType2D.Static;
-            
-        //}
-
-        //if (rightCanGrab)
-        //{
-        //    rbR.bodyType = RigidbodyType2D.Static;
-        //}
- 
-    }
-
-    // Unlocks the hands when the shoulder button is released
-    void Detatch()
-    {
-        //if(rbL.bodyType == RigidbodyType2D.Static)
-        //{
-        //    rbL.bodyType = RigidbodyType2D.Dynamic;
-        //    head.bodyType = RigidbodyType2D.Dynamic;
-        //}
-
-        //if (rbR.bodyType == RigidbodyType2D.Static)
-        //{
-        //    rbR.bodyType = RigidbodyType2D.Dynamic;
-        //    head.bodyType = RigidbodyType2D.Dynamic;
-        //}
     }
 
     void OnDrawGizmos()
