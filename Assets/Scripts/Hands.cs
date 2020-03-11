@@ -26,6 +26,8 @@ public class Hands : MonoBehaviour
     {
         rbR = rightHand.GetComponent<Rigidbody2D>();
         rbL = leftHand.GetComponent<Rigidbody2D>();
+        
+        // Sets the position of the hand in the previous frame
         leftHandPos = leftHand.position;
         rightHandPos = rightHand.position;
     }
@@ -53,17 +55,16 @@ public class Hands : MonoBehaviour
         Vector3.Lerp(rightHandPos, leftHand.position, 1f);
         Vector3.Lerp(leftHandPos, transform.position, 1f);
 
-        leftCanGrab = Physics2D.OverlapCircle(leftHand.transform.position, radius, WhatIsGrab);
+        leftCanGrab = Physics2D.OverlapCircle(leftHand.transform.position, radius, WhatIsGrab); // Bool checks if the overlapsphere collides with layer mask for both hands
         rightCanGrab = Physics2D.OverlapCircle(rightHand.transform.position, radius, WhatIsGrab);
-
-        //rightHand.localRotation
     }
 
+    // Draws a the overlap circle for each hand
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.blue; // Draws the left hand circle blue
         Gizmos.DrawWireSphere(leftHand.position, radius);
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.red;// Draws the right hand circle red
         Gizmos.DrawWireSphere(rightHand.position, radius);
     }
 }

@@ -6,8 +6,10 @@ public class Arms : MonoBehaviour
 {
     public Transform leftHand, rightHand;
     public Transform leftOrigin, rightOrigin;
-    public LineRenderer leftSpring, rightSpring;
+    public LineRenderer leftSpring, rightSpring; //The arms of the lpayer
 
+
+    // Sets the position of the line renderer from the shoulders of the player to the start of the arms
     private void Update()
     {
         leftSpring.SetPosition(0, leftOrigin.localPosition);
