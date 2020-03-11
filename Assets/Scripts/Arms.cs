@@ -8,7 +8,7 @@ public class Arms : MonoBehaviour
     [SerializeField] private Controls _controls; //Input Action Script
     private Vector2 arms; //The position of the the control stick that moves the players arms
     private Vector3 leftHandPos, rightHandPos; // Position of the arms in the last frame
-    private float speed = 12f; // Speed the player arms move
+    private float speed = 8f; // Speed the player arms move
     private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
     private float radius = 0.3f; // Radius of the hands overlap circle
 

@@ -759,16 +759,17 @@ GameObject:
   - component: {fileID: 371630826}
   - component: {fileID: 371630825}
   - component: {fileID: 371630824}
+  - component: {fileID: 371630822}
   - component: {fileID: 371630823}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!233 &371630823
-HingeJoint2D:
+--- !u!231 &371630822
+SpringJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -776,21 +777,33 @@ HingeJoint2D:
   m_GameObject: {fileID: 371630821}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 1477584537}
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 223541843}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.00000020867378, y: -0.38000005}
-  m_ConnectedAnchor: {x: -1.0477626, y: 0.021664212}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -90
-    m_UpperAngle: -90
+  m_Anchor: {x: 0, y: -0.36}
+  m_ConnectedAnchor: {x: -0.5439935, y: -0.6584916}
+  m_AutoConfigureDistance: 0
+  m_Distance: 1.0361617
+  m_DampingRatio: 1
+  m_Frequency: 2.7
+--- !u!58 &371630823
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371630821}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 0.38000008
 --- !u!50 &371630824
 Rigidbody2D:
   serializedVersion: 4
@@ -803,7 +816,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 4
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -869,7 +882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371630821}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.46, y: -0.471, z: 0}
+  m_LocalPosition: {x: -2.46, y: -0.656, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 62155944}
@@ -1920,7 +1933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1477584537
 Rigidbody2D:
   serializedVersion: 4
@@ -2052,16 +2065,17 @@ GameObject:
   - component: {fileID: 1534716937}
   - component: {fileID: 1534716936}
   - component: {fileID: 1534716935}
+  - component: {fileID: 1534716933}
   - component: {fileID: 1534716934}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!233 &1534716934
-HingeJoint2D:
+--- !u!231 &1534716933
+SpringJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2069,21 +2083,33 @@ HingeJoint2D:
   m_GameObject: {fileID: 1534716932}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 1741292520}
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 223541843}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.00000018898183, y: -0.37999868}
-  m_ConnectedAnchor: {x: 1.0494198, y: 0.00006264686}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: 90
-    m_UpperAngle: 90
+  m_Anchor: {x: 0, y: -0.34}
+  m_ConnectedAnchor: {x: 0.5813092, y: -0.67072314}
+  m_AutoConfigureDistance: 0
+  m_Distance: 1.0579705
+  m_DampingRatio: 1
+  m_Frequency: 2.7
+--- !u!58 &1534716934
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534716932}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 0.38000008
 --- !u!50 &1534716935
 Rigidbody2D:
   serializedVersion: 4
@@ -2096,7 +2122,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 4
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -2162,7 +2188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534716932}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.51, y: -0.491, z: 0}
+  m_LocalPosition: {x: 2.51, y: -0.656, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 62155944}
@@ -2501,7 +2527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1741292520
 Rigidbody2D:
   serializedVersion: 4
