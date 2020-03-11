@@ -2,3 +2,4 @@
 /UnityLockfile
 .lock
 Temp/UnityLockfile
+*.ide-wal
