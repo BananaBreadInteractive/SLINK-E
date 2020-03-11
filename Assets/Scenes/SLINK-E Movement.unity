@@ -130,8 +130,9 @@ GameObject:
   m_Component:
   - component: {fileID: 62155944}
   - component: {fileID: 62155943}
+  - component: {fileID: 62155945}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: 'SLINK '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62155942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.145, y: 2.677, z: 0}
+  m_LocalPosition: {x: 0.02, y: 2.677, z: 0}
   m_LocalScale: {x: 0.66591, y: 0.66591, z: 0.66591}
   m_Children:
   - {fileID: 223541846}
@@ -180,6 +181,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &62155945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62155942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bec83c9d2f993146a87b763f83c588a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 223541843}
+  leftHand: {fileID: 371630826}
+  rightHand: {fileID: 1534716937}
+  WhatIsGrab:
+    serializedVersion: 2
+    m_Bits: 1335
+  leftCanGrab: 0
+  rightCanGrab: 0
 --- !u!1001 &153099023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,7 +301,7 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_UseMotor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
@@ -291,6 +312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}
@@ -434,11 +460,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec83c9d2f993146a87b763f83c588a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  head: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
   WhatIsGrab:
     serializedVersion: 2
     m_Bits: 0
-  canGrab: 0
+  leftCanGrab: 0
+  rightCanGrab: 0
 --- !u!1 &223541842
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,8 +753,6 @@ GameObject:
   - component: {fileID: 371630825}
   - component: {fileID: 371630824}
   - component: {fileID: 371630823}
-  - component: {fileID: 371630822}
-  - component: {fileID: 371630827}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -733,23 +760,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &371630822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371630821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bec83c9d2f993146a87b763f83c588a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223541843}
-  WhatIsGrab:
-    serializedVersion: 2
-    m_Bits: 1024
-  canGrab: 0
 --- !u!233 &371630823
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -858,22 +868,6 @@ Transform:
   m_Father: {fileID: 62155944}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &371630827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371630821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cac07c81b226c04fa31a6f94f8a2a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  open: {fileID: 0}
-  closed: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
 --- !u!1001 &467481677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -974,7 +968,7 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_UseMotor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
@@ -985,6 +979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}
@@ -1290,7 +1289,7 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_UseMotor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
@@ -1301,6 +1300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}
@@ -1440,7 +1444,7 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_UseMotor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
@@ -1451,6 +1455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}
@@ -1594,11 +1603,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec83c9d2f993146a87b763f83c588a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  head: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
   WhatIsGrab:
     serializedVersion: 2
     m_Bits: 0
-  canGrab: 0
+  leftCanGrab: 0
+  rightCanGrab: 0
 --- !u!50 &1356850607 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1072583796222285347, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
@@ -1850,7 +1862,7 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_UseMotor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
@@ -1861,6 +1873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}
@@ -1888,7 +1905,6 @@ GameObject:
   - component: {fileID: 1534716936}
   - component: {fileID: 1534716935}
   - component: {fileID: 1534716934}
-  - component: {fileID: 1534716933}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -1896,23 +1912,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1534716933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534716932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bec83c9d2f993146a87b763f83c588a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 223541843}
-  WhatIsGrab:
-    serializedVersion: 2
-    m_Bits: 1024
-  canGrab: 0
 --- !u!233 &1534716934
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -2260,7 +2259,7 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_UseMotor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
@@ -2271,6 +2270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}
@@ -2435,6 +2439,16 @@ PrefabInstance:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 1435406062}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_UseMotor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}
 --- !u!1001 &1816687714
@@ -2532,6 +2546,16 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_UseMotor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2766,7 +2790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969110462}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.417, y: 3.827, z: 0}
+  m_LocalPosition: {x: -0.03, y: 4.05, z: 0}
   m_LocalScale: {x: 2.712839, y: 2.712839, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2884,7 +2908,7 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_UseMotor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
@@ -2895,6 +2919,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}
@@ -2998,7 +3032,7 @@ PrefabInstance:
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
       propertyPath: m_UseMotor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
         type: 3}
@@ -3009,6 +3043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756809713000861360, guid: c3b39f84287ceb34fa1ac24e2ba835d3,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b39f84287ceb34fa1ac24e2ba835d3, type: 3}

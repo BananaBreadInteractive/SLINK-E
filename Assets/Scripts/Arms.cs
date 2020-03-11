@@ -5,77 +5,100 @@ using UnityEngine.InputSystem;
 
 public class Arms : MonoBehaviour
 {
-    [SerializeField] private Controls _controls;
-    private Vector2 leftArm;
-    private Vector3 armPos;
-    private float startTime;
-    private float speed = 8f;
-    private Rigidbody2D rb;
-    public Rigidbody2D player;
+    [SerializeField] private Controls _controls; //Input Action Script
+    private Vector2 arms; //The position of the the control stick that moves the players arms
+    private Vector3 leftHandPos, rightHandPos; // Position of the arms in the last frame
+    private float speed = 12f; // Speed the player arms move
+    private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
+    private float radius = 0.3f; // Radius of the hands overlap circle
 
-    private float radius = 0.3f;
-    public LayerMask WhatIsGrab;
-    public bool canGrab;
+    public Rigidbody2D head; // Rigidbody of the players head
+    public Transform leftHand, rightHand; //References the position of the hands
+    public LayerMask WhatIsGrab; // Layer mask to check what the player can grab 
+    public bool leftCanGrab, rightCanGrab; // Checks to see if the players hands can grab a surface
 
     private void Awake()
     {
-        _controls = new Controls();
+        _controls = new Controls(); 
     }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        armPos = transform.position;
-        startTime = Time.time;
+        rbR = rightHand.GetComponent<Rigidbody2D>();
+        rbL = leftHand.GetComponent<Rigidbody2D>();
+        leftHandPos = leftHand.position;
+        rightHandPos = rightHand.position;
     }
 
-    void OnEnable()
+    // Listens for the inputs defined by the players input actions in the Controls class
+    void OnEnable() 
     {
         _controls.Player.Enable();
-        _controls.Player.Arms.performed += ctx => leftArm = ctx.ReadValue<Vector2>();
-        _controls.Player.Arms.canceled += ctx => leftArm = Vector2.zero;
+        _controls.Player.Arms.performed += ctx => arms = ctx.ReadValue<Vector2>(); // Reads the value of the left stick as x and y values
+        _controls.Player.Arms.canceled += ctx => arms = Vector2.zero; // Set the vector to zero when the stick is not being controlled
 
         _controls.Player.LeftHand.performed += ctx => Attatch();
         _controls.Player.RightHand.performed += ctx => Attatch();
         _controls.Player.LeftHand.canceled += ctx => Detatch();
         _controls.Player.RightHand.canceled += ctx => Detatch();
     }
-
+    
+    // Stops listening for Inputs when no buttons are being pressed
     void OnDisable()
     {
         _controls.Player.Disable();
     }
 
+    // Moves the hands based on the position of the left stick and smooths the movement of the player
     private void FixedUpdate()
     {
-        Vector2 leftVector = new Vector2(leftArm.x, leftArm.y) * Time.deltaTime * speed;
-        rb.MovePosition((Vector2)transform.position + (leftVector));
-        Vector3.Lerp(armPos, transform.position, 1f);
+        Vector2 armVector = new Vector2(arms.x, arms.y) * Time.deltaTime * speed;
+        rbR.MovePosition((Vector2)rightHand.position + (armVector));
+        rbL.MovePosition((Vector2)leftHand.position + (armVector));
+        Vector3.Lerp(rightHandPos, leftHand.position, 1f);
+        Vector3.Lerp(leftHandPos, transform.position, 1f);
 
-        canGrab = Physics2D.OverlapCircle(transform.position, radius, WhatIsGrab);
-
-
+        leftCanGrab = Physics2D.OverlapCircle(leftHand.transform.position, radius, WhatIsGrab);
+        rightCanGrab = Physics2D.OverlapCircle(rightHand.transform.position, radius, WhatIsGrab);
     }
 
+    // Locks the rigidbody of the hands in place when the shoulder buttons are pressed
     void Attatch()
     {
-        if (canGrab)
-        {
-            rb.bodyType = RigidbodyType2D.Static;
-            player.bodyType = RigidbodyType2D.Dynamic;
-        }
+        //if (leftCanGrab)
+        //{
+        //    rbL.bodyType = RigidbodyType2D.Static;
+            
+        //}
 
-        
+        //if (rightCanGrab)
+        //{
+        //    rbR.bodyType = RigidbodyType2D.Static;
+        //}
+ 
     }
 
+    // Unlocks the hands when the shoulder button is released
     void Detatch()
     {
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        //if(rbL.bodyType == RigidbodyType2D.Static)
+        //{
+        //    rbL.bodyType = RigidbodyType2D.Dynamic;
+        //    head.bodyType = RigidbodyType2D.Dynamic;
+        //}
+
+        //if (rbR.bodyType == RigidbodyType2D.Static)
+        //{
+        //    rbR.bodyType = RigidbodyType2D.Dynamic;
+        //    head.bodyType = RigidbodyType2D.Dynamic;
+        //}
     }
 
     void OnDrawGizmos()
     {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(leftHand.position, radius);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(rightHand.position, radius);
     }
 }
