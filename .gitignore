@@ -4,3 +4,4 @@
 Temp/UnityLockfile
 *.lock
 *.ide-wal
+*.ide-shm
