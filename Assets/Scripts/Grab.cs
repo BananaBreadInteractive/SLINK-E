@@ -7,7 +7,7 @@ public class Grab : MonoBehaviour
 {
     [SerializeField] private Controls _controls;
     private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
-    private Arms _arms;
+    private Hands _hands;
 
     public Sprite open, closed;
     public GameObject left, right;
@@ -16,7 +16,7 @@ public class Grab : MonoBehaviour
     private void Awake()
     {
         _controls = new Controls();
-        _arms = FindObjectOfType<Arms>();
+        _hands = FindObjectOfType<Hands>();
 
         rbL = left.GetComponent<Rigidbody2D>();
         rbR = right.GetComponent<Rigidbody2D>();
@@ -41,10 +41,10 @@ public class Grab : MonoBehaviour
     {
         left.GetComponent<SpriteRenderer>().sprite = closed;
 
-        if (_arms.leftCanGrab)
+        if (_hands.leftCanGrab)
         {
             rbL.bodyType = RigidbodyType2D.Static;
-            _arms.head.bodyType = RigidbodyType2D.Dynamic;
+            _hands.head.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
@@ -52,10 +52,10 @@ public class Grab : MonoBehaviour
     {
         right.GetComponent<SpriteRenderer>().sprite = closed;
 
-        if (_arms.rightCanGrab)
+        if (_hands.rightCanGrab)
         {
             rbR.bodyType = RigidbodyType2D.Static;
-            _arms.head.bodyType = RigidbodyType2D.Dynamic;
+            _hands.head.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
