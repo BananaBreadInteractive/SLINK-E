@@ -3,3 +3,4 @@
 .lock
 Temp/UnityLockfile
 *.lock
+.vs/SLINK-E/v15/Server/sqlite3/storage.ide-wal
