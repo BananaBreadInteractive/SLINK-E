@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -654,8 +654,8 @@ SpringJoint2D:
   m_Distance: 1.0361617
   m_DampingRatio: 1
   m_Frequency: 2.7
---- !u!58 &371630823
-CircleCollider2D:
+--- !u!61 &371630823
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -667,9 +667,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000021159234, y: -0.17749654}
+  m_Offset: {x: -0.015380681, y: -0.18456881}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.76, y: 0.76}
+    newSize: {x: 0.76, y: 0.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.20250341
+  m_Size: {x: 0.43700445, y: 0.39086238}
+  m_EdgeRadius: 0
 --- !u!50 &371630824
 Rigidbody2D:
   serializedVersion: 4
@@ -1141,8 +1151,8 @@ SpringJoint2D:
   m_Distance: 1.0579705
   m_DampingRatio: 1
   m_Frequency: 2.7
---- !u!58 &1534716934
-CircleCollider2D:
+--- !u!61 &1534716934
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1154,9 +1164,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010509488, y: -0.20318396}
+  m_Offset: {x: -0.017290086, y: -0.17482026}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.76, y: 0.76}
+    newSize: {x: 0.76, y: 0.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.18732554
+  m_Size: {x: 0.4487812, y: 0.41035947}
+  m_EdgeRadius: 0
 --- !u!50 &1534716935
 Rigidbody2D:
   serializedVersion: 4
