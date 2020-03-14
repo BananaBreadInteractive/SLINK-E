@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9460737}
   - component: {fileID: 9460738}
+  - component: {fileID: 9460739}
   m_Layer: 0
   m_Name: Left Arm
   m_TagString: Untagged
@@ -247,6 +248,20 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!64 &9460739
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9460736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1 &62155942
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +830,7 @@ SpringJoint2D:
   m_GameObject: {fileID: 624992531}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 223541843}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -1366,7 +1381,7 @@ SpringJoint2D:
   m_GameObject: {fileID: 2041981497}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 223541843}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
