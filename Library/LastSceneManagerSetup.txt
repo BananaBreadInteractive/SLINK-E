@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SLINK-E Movement.unity
+- path: Assets/Scenes/Paul's Tutorial (in Progress).unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
