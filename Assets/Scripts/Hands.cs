@@ -10,12 +10,13 @@ public class Hands : MonoBehaviour
     private Vector3 leftHandPos, rightHandPos; // Position of the arms in the last frame
     private float speed = 8f; // Speed the player arms move
     private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
-    private float radius = 0.3f; // Radius of the hands overlap circle
+    private float radius = 0.4f; // Radius of the hands overlap circle
 
     public Rigidbody2D head; // Rigidbody of the players head
     public Transform leftHand, rightHand; //References the position of the hands
     public LayerMask WhatIsGrab; // Layer mask to check what the player can grab 
     public bool leftCanGrab, rightCanGrab; // Checks to see if the players hands can grab a surface
+    public bool grabbing; // Checks to see if the players hands can grab a surface
 
     private void Awake()
     {
@@ -50,8 +51,16 @@ public class Hands : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 armVector = new Vector2(arms.x, arms.y) * Time.deltaTime * speed;
-        rbR.MovePosition((Vector2)rightHand.position + (armVector));
-        rbL.MovePosition((Vector2)leftHand.position + (armVector));
+
+        rbL.AddForce(armVector * 1000f);
+        rbR.AddForce(armVector * 1000f);
+
+        if(leftCanGrab || rightCanGrab)
+        {
+            head.AddForce(new Vector3(armVector.x, armVector.y * 3f, 0) * 180f);
+        }
+        
+
         Vector3.Lerp(rightHandPos, leftHand.position, 1f);
         Vector3.Lerp(leftHandPos, transform.position, 1f);
 

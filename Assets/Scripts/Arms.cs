@@ -16,11 +16,11 @@ public class Arms : MonoBehaviour
 
     void Start()
     {
-        leftSpring.gameObject.AddComponent<EdgeCollider2D>();
-        rightSpring.gameObject.AddComponent<EdgeCollider2D>();
+        //leftSpring.gameObject.AddComponent<EdgeCollider2D>();
+        //rightSpring.gameObject.AddComponent<EdgeCollider2D>();
 
-        points = new Vector3[leftSpring.positionCount];
-        leftSpring.GetPositions(points);
+       // points = new Vector3[leftSpring.positionCount];
+        //leftSpring.GetPositions(points);
     }
 
     // Sets the position of the line renderer from the shoulders of the player to the start of the arms

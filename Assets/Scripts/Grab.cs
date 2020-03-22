@@ -46,6 +46,7 @@ public class Grab : MonoBehaviour
 
         if (_hands.leftCanGrab)
         {
+            _hands.grabbing = true;
             rbL.bodyType = RigidbodyType2D.Static;
             _hands.head.bodyType = RigidbodyType2D.Dynamic;
         }
@@ -57,6 +58,7 @@ public class Grab : MonoBehaviour
 
         if (_hands.rightCanGrab)
         {
+            _hands.grabbing = true;
             rbR.bodyType = RigidbodyType2D.Static;
             _hands.head.bodyType = RigidbodyType2D.Dynamic;
         }
@@ -66,6 +68,7 @@ public class Grab : MonoBehaviour
     private void LeftOpen()
     {
         left.GetComponent<SpriteRenderer>().sprite = open;
+        _hands.grabbing = false;
 
         if(rbL.bodyType == RigidbodyType2D.Static)
         {
@@ -76,6 +79,7 @@ public class Grab : MonoBehaviour
     private void RightOpen()
     {
         right.GetComponent<SpriteRenderer>().sprite = open;
+        _hands.grabbing = false;
 
         if (rbR.bodyType == RigidbodyType2D.Static)
         {
