@@ -41,6 +41,22 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""DPadUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""65b4d726-a855-4d12-897a-b34191fa50dd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""DPadDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""457f3be9-b5a1-4755-95a6-c7c10b101ca0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -76,6 +92,28 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""RightHand"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ca5cb0b-691b-4528-b051-897e79f396c6"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DPadDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e267d20-8047-4861-a605-954c032c7493"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DPadUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -87,6 +125,8 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_Arms = m_Player.FindAction("Arms", throwIfNotFound: true);
         m_Player_LeftHand = m_Player.FindAction("LeftHand", throwIfNotFound: true);
         m_Player_RightHand = m_Player.FindAction("RightHand", throwIfNotFound: true);
+        m_Player_DPadUp = m_Player.FindAction("DPadUp", throwIfNotFound: true);
+        m_Player_DPadDown = m_Player.FindAction("DPadDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,6 +179,8 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Arms;
     private readonly InputAction m_Player_LeftHand;
     private readonly InputAction m_Player_RightHand;
+    private readonly InputAction m_Player_DPadUp;
+    private readonly InputAction m_Player_DPadDown;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -146,6 +188,8 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Arms => m_Wrapper.m_Player_Arms;
         public InputAction @LeftHand => m_Wrapper.m_Player_LeftHand;
         public InputAction @RightHand => m_Wrapper.m_Player_RightHand;
+        public InputAction @DPadUp => m_Wrapper.m_Player_DPadUp;
+        public InputAction @DPadDown => m_Wrapper.m_Player_DPadDown;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -164,6 +208,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @RightHand.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightHand;
                 @RightHand.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightHand;
                 @RightHand.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightHand;
+                @DPadUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadUp;
+                @DPadUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadUp;
+                @DPadUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadUp;
+                @DPadDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadDown;
+                @DPadDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadDown;
+                @DPadDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadDown;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -177,6 +227,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @RightHand.started += instance.OnRightHand;
                 @RightHand.performed += instance.OnRightHand;
                 @RightHand.canceled += instance.OnRightHand;
+                @DPadUp.started += instance.OnDPadUp;
+                @DPadUp.performed += instance.OnDPadUp;
+                @DPadUp.canceled += instance.OnDPadUp;
+                @DPadDown.started += instance.OnDPadDown;
+                @DPadDown.performed += instance.OnDPadDown;
+                @DPadDown.canceled += instance.OnDPadDown;
             }
         }
     }
@@ -186,5 +242,7 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnArms(InputAction.CallbackContext context);
         void OnLeftHand(InputAction.CallbackContext context);
         void OnRightHand(InputAction.CallbackContext context);
+        void OnDPadUp(InputAction.CallbackContext context);
+        void OnDPadDown(InputAction.CallbackContext context);
     }
 }

@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Input\Controls.cs" />
     <Compile Include="Assets\Scripts\Input\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\MenuLogo.cs" />
+    <Compile Include="Assets\Scripts\SelectionIndicator.cs" />
     <Compile Include="Assets\Scripts\test.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

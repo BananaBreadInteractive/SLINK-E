@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Grab : MonoBehaviour
 {
-    [SerializeField] private Controls _controls; // Input acrion set
+    [SerializeField] private Controls _controls; // Input action set
     private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
     private Hands _hands; // References hands script
 
