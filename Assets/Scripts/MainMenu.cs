@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     private Vector2 move;
     private Transform indicatorPos;
     private int selectionNumber = 1;
+    private float selected = 0;
 
     public LineRenderer spring;
     public GameObject top, bottom;
@@ -21,6 +22,8 @@ public class MainMenu : MonoBehaviour
     public GameObject text;
     public Material playMat, controlMat, exitMat;
     private float glowVal = 0.3f;
+
+    private AudioManager _audioManager;
 
     private void Awake()
     {
@@ -31,6 +34,7 @@ public class MainMenu : MonoBehaviour
     {
         indicatorPos = indicator.GetComponent<Transform>();
         indicatorPos.position = selectionTransform1.position;
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnEnable()
@@ -38,6 +42,8 @@ public class MainMenu : MonoBehaviour
         _controls.Player.Enable();
         _controls.Player.DPadUp.started += ctx => Up();
         _controls.Player.DPadDown.started += ctx => Down();
+        _controls.Player.Select.performed += ctx => selected = _controls.Player.Select.ReadValue<float>();
+        _controls.Player.Select.canceled += ctx => selected = 0;
 
     }
 
@@ -81,6 +87,8 @@ public class MainMenu : MonoBehaviour
                 break;
         }
 
+        
+
         spring.SetPosition(0, top.transform.localPosition);
         spring.SetPosition(1, bottom.transform.localPosition);
     }
@@ -88,11 +96,13 @@ public class MainMenu : MonoBehaviour
     public void Up()
     {
         selectionNumber--;
+        _audioManager.Play("MenuClick");
     }
 
     public void Down()
     {
         selectionNumber++;
+        _audioManager.Play("MenuClick");
     }
 
     public void PlayGame()

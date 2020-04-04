@@ -57,6 +57,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""0393e654-dc36-4bd3-ae0e-7980a5b0c2e8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -114,6 +122,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""DPadUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9d96c025-aa86-481b-a1e7-ce17fb6dc85e"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -127,6 +146,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_RightHand = m_Player.FindAction("RightHand", throwIfNotFound: true);
         m_Player_DPadUp = m_Player.FindAction("DPadUp", throwIfNotFound: true);
         m_Player_DPadDown = m_Player.FindAction("DPadDown", throwIfNotFound: true);
+        m_Player_Select = m_Player.FindAction("Select", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -181,6 +201,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_RightHand;
     private readonly InputAction m_Player_DPadUp;
     private readonly InputAction m_Player_DPadDown;
+    private readonly InputAction m_Player_Select;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -190,6 +211,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @RightHand => m_Wrapper.m_Player_RightHand;
         public InputAction @DPadUp => m_Wrapper.m_Player_DPadUp;
         public InputAction @DPadDown => m_Wrapper.m_Player_DPadDown;
+        public InputAction @Select => m_Wrapper.m_Player_Select;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -214,6 +236,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @DPadDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadDown;
                 @DPadDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadDown;
                 @DPadDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadDown;
+                @Select.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -233,6 +258,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @DPadDown.started += instance.OnDPadDown;
                 @DPadDown.performed += instance.OnDPadDown;
                 @DPadDown.canceled += instance.OnDPadDown;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
             }
         }
     }
@@ -244,5 +272,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnRightHand(InputAction.CallbackContext context);
         void OnDPadUp(InputAction.CallbackContext context);
         void OnDPadDown(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
     }
 }
