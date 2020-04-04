@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,10 +13,14 @@ public class MainMenu : MonoBehaviour
     public GameObject indicator;
     private Vector2 move;
     private Transform indicatorPos;
-    [SerializeField] private int selectionNumber = 0;
+    private int selectionNumber = 1;
 
     public LineRenderer spring;
     public GameObject top, bottom;
+
+    public GameObject text;
+    public Material playMat, controlMat, exitMat;
+    private float glowVal = 0.3f;
 
     private void Awake()
     {
@@ -48,15 +53,27 @@ public class MainMenu : MonoBehaviour
         {
             case 0:
                 indicatorPos.position = selectionTransform1.position;
+                controlMat.SetFloat(ShaderUtilities.ID_GlowPower, 0);
+                exitMat.SetFloat(ShaderUtilities.ID_GlowPower, 0);
+                playMat.SetFloat(ShaderUtilities.ID_GlowPower, glowVal);
                 break;
             case 1:
                 indicatorPos.position = selectionTransform1.position;
+                controlMat.SetFloat(ShaderUtilities.ID_GlowPower, 0);
+                exitMat.SetFloat(ShaderUtilities.ID_GlowPower, 0);
+                playMat.SetFloat(ShaderUtilities.ID_GlowPower, glowVal);
                 break;
             case 2:
                 indicatorPos.position = selectionTransform2.position;
+                playMat.SetFloat(ShaderUtilities.ID_GlowPower, 0);
+                exitMat.SetFloat(ShaderUtilities.ID_GlowPower, 0);
+                controlMat.SetFloat(ShaderUtilities.ID_GlowPower, glowVal);
                 break;
             case 3:
                 indicatorPos.position = selectionTransform3.position;
+                playMat.SetFloat(ShaderUtilities.ID_GlowPower, 0);
+                controlMat.SetFloat(ShaderUtilities.ID_GlowPower, 0);
+                exitMat.SetFloat(ShaderUtilities.ID_GlowPower, glowVal);
                 break;
             default:
                 indicatorPos.position = selectionTransform1.position;
