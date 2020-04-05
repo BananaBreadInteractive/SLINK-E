@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
         _audioManager = FindObjectOfType<AudioManager>();
     }
 
-    //Listen for player inputs
+    //Listens for player inputs
     private void OnEnable()
     {
         _controls.Player.Enable();
@@ -46,7 +46,7 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    //Stop listenong for player inputs
+    //Stop listening for player inputs
     private void OnDisable()
     {
         _controls.Player.Disable();
