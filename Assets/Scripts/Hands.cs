@@ -10,7 +10,7 @@ public class Hands : MonoBehaviour
     private Vector3 leftHandPos, rightHandPos; // Position of the arms in the last frame
     private float speed = 8f; // Speed the player arms move
     private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
-    private float radius = 0.4f; // Radius of the hands overlap circle
+    private float radius = 0.3f; // Radius of the hands overlap circle
 
     public Rigidbody2D head; // Rigidbody of the players head
     public Transform leftHand, rightHand; //References the position of the hands
@@ -52,8 +52,8 @@ public class Hands : MonoBehaviour
     {
         Vector2 armVector = new Vector2(arms.x, arms.y) * Time.deltaTime * speed;
 
-        rbL.AddForce(armVector * 1000f);
-        rbR.AddForce(armVector * 1000f);
+        rbL.AddForce(armVector * 600f);
+        rbR.AddForce(armVector * 600f);
 
         if(leftCanGrab || rightCanGrab)
         {
@@ -66,6 +66,8 @@ public class Hands : MonoBehaviour
 
         leftCanGrab = Physics2D.OverlapCircle(leftHand.transform.position, radius, WhatIsGrab); // Bool checks if the overlapsphere collides with layer mask for both hands
         rightCanGrab = Physics2D.OverlapCircle(rightHand.transform.position, radius, WhatIsGrab);
+
+        //leftHand.transform.localRotation == 
     }
 
     // Draws a the overlap circle for each hand

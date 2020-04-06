@@ -47,7 +47,7 @@ public class Grab : MonoBehaviour
         if (_hands.leftCanGrab)
         {
             _hands.grabbing = true;
-            rbL.bodyType = RigidbodyType2D.Static;
+            rbL.constraints = RigidbodyConstraints2D.FreezePosition;
             _hands.head.bodyType = RigidbodyType2D.Dynamic;
         }
     }
@@ -59,7 +59,7 @@ public class Grab : MonoBehaviour
         if (_hands.rightCanGrab)
         {
             _hands.grabbing = true;
-            rbR.bodyType = RigidbodyType2D.Static;
+            rbR.constraints = RigidbodyConstraints2D.FreezePosition;
             _hands.head.bodyType = RigidbodyType2D.Dynamic;
         }
     }
@@ -70,9 +70,9 @@ public class Grab : MonoBehaviour
         left.GetComponent<SpriteRenderer>().sprite = open;
         _hands.grabbing = false;
 
-        if(rbL.bodyType == RigidbodyType2D.Static)
+        if(rbL.constraints == RigidbodyConstraints2D.FreezePosition)
         {
-            rbL.bodyType = RigidbodyType2D.Dynamic;
+            rbL.constraints = RigidbodyConstraints2D.None;
         }
     }
 
@@ -81,9 +81,9 @@ public class Grab : MonoBehaviour
         right.GetComponent<SpriteRenderer>().sprite = open;
         _hands.grabbing = false;
 
-        if (rbR.bodyType == RigidbodyType2D.Static)
+        if (rbR.constraints == RigidbodyConstraints2D.FreezePosition)
         {
-            rbR.bodyType = RigidbodyType2D.Dynamic;
+            rbR.constraints = RigidbodyConstraints2D.None;
         }
     }
 }
