@@ -11,7 +11,6 @@ public class Grab : MonoBehaviour
 
     public Sprite open, closed; // Images for the open and closed claws
     public GameObject left, right; // Both hands
-   
 
     private void Awake()
     {
