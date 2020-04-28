@@ -96,6 +96,7 @@
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\LWRP\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\_Grab.cs" />
     <Compile Include="Assets\Scripts\Arms.cs" />
     <Compile Include="Assets\Scripts\AttachPlayer.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
