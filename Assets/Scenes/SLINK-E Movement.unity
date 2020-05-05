@@ -721,7 +721,7 @@ FixedJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -5.43501, y: -1.5031575}
   m_DampingRatio: 0
-  m_Frequency: 0
+  m_Frequency: 2
 --- !u!1 &1563407394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1054,7 @@ FixedJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -3.02851, y: -1.5031575}
   m_DampingRatio: 0
-  m_Frequency: 0
+  m_Frequency: 2
 --- !u!1 &1801177263
 GameObject:
   m_ObjectHideFlags: 0
