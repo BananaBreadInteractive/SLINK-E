@@ -2,23 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _Grab : MonoBehaviour
+public class _Grab : MonoBehaviour // Moves the players hands and allows the player to climb
 {
     [SerializeField] private Controls _controls; //Input Action Script
     private Vector2 arms; //The position of the the control stick that moves the players arms
     private Vector3 leftWristPos, rightWristPos; // Position of the arms in the last frame
     private float speed = 8f; // Speed the player arms move
-    private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
-    private float handRadius = 0.2f; // Radius of the hands overlap circle
-    private float bodyRadius = 0.45f; // Radius of the 
 
+
+    private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
     public Rigidbody2D head; // Rigidbody of the players head
+    public Rigidbody2D attachedRb;
+    private FixedJoint2D fjR, fjL;
     public Transform leftWrist, rightWrist; // References the position of the wrists
     public Transform leftHand, rightHand; // References the position of the hands
+
+
+    private float handRadius = 0.2f; // Radius of the hands overlap circle
+    private float bodyRadius = 0.45f; // Radius of the ground check
     public LayerMask WhatIsGrab; // Layer mask to check what the player can grab 
+    public LayerMask WhatIsCog;
     public bool leftCanGrab, rightCanGrab; // Checks to see if the players hands can grab a surface
-    public bool leftGrabbing, rightGrabbing; // Checks to see if the players hands can grab a surface
-    public bool grounded; // Checks to see if the player is grounded
+    public bool leftGrabbing, rightGrabbing; // Checks if the grab buttons are being pressed
+    public bool grounded;
+    public bool cogL, cogR;
 
     public Sprite open, closed; // Images for the open and closed claws
 
@@ -32,6 +39,9 @@ public class _Grab : MonoBehaviour
         rbR = rightWrist.GetComponent<Rigidbody2D>();
         rbL = leftWrist.GetComponent<Rigidbody2D>();
 
+        fjR = rightWrist.GetComponent<FixedJoint2D>();
+        fjL = leftWrist.GetComponent<FixedJoint2D>();
+
         // Sets the position of the hand in the previous frame
         leftWristPos = leftWrist.position;
         rightWristPos = rightWrist.position;
@@ -40,19 +50,20 @@ public class _Grab : MonoBehaviour
     void OnEnable()
     {
         _controls.Player.Enable();
-        _controls.Player.Arms.performed += ctx => arms = ctx.ReadValue<Vector2>(); // Reads the value of the left stick as x and y values
-        _controls.Player.Arms.performed += ctx => grounded = false;
-
-        _controls.Player.Arms.canceled += ctx => arms = Vector2.zero; // Set the vector to zero when the stick is not being controlled
-        _controls.Player.Arms.canceled += ctx => grounded = true;
 
         // Pressed Actions
         _controls.Player.LeftHand.performed += ctx => LeftClose();
         _controls.Player.RightHand.performed += ctx => RightClose();
+        _controls.Player.Arms.performed += ctx => arms = ctx.ReadValue<Vector2>(); // Reads the value of the left stick as x and y values
+        _controls.Player.Arms.performed += ctx => grounded = false; // Allows the player's body to move freely mid-air
+        _controls.Player.LeftHand.performed += ctx => leftGrabbing = true;
+        _controls.Player.RightHand.performed += ctx => rightGrabbing = true;
 
         // Release Actions
         _controls.Player.LeftHand.canceled += ctx => LeftOpen();
         _controls.Player.RightHand.canceled += ctx => RightOpen();
+        _controls.Player.Arms.canceled += ctx => arms = Vector2.zero; // Set the vector to zero when the stick is not being controlled
+        _controls.Player.Arms.canceled += ctx => grounded = true; // Returns the player to a groudned state
     }
 
     // Stops listening for Inputs when no buttons are being pressed
@@ -65,6 +76,7 @@ public class _Grab : MonoBehaviour
     {
         Vector2 armVector = new Vector2(arms.x, arms.y) * Time.deltaTime * speed;
 
+
         if (!grounded)
         {
             rbL.AddForce(armVector * 500f);
@@ -76,14 +88,42 @@ public class _Grab : MonoBehaviour
             head.AddForce(new Vector3(armVector.x, armVector.y * 3f, 0) * 180f);
         }
 
-        if (leftGrabbing)
+        if (leftGrabbing && leftCanGrab)
         {
-            //rbL.constraints = RigidbodyConstraints2D.FreezePosition;
+            rbL.constraints = RigidbodyConstraints2D.FreezePosition;
+        }
+        else
+        {
+            rbL.constraints = RigidbodyConstraints2D.None;
         }
 
-        if (rightGrabbing)
+        if (rightGrabbing && rightCanGrab)
         {
             rbR.constraints = RigidbodyConstraints2D.FreezePosition;
+        }
+        else
+        {
+            rbR.constraints = RigidbodyConstraints2D.None;
+        }
+
+        if (cogL && leftGrabbing)
+        {
+            fjL.enabled = true;
+            fjL.connectedBody = attachedRb;
+        }
+        else
+        {
+            fjL.enabled = false;
+        }
+
+        if (cogR && rightGrabbing)
+        {
+            fjR.enabled = true;
+            fjR.connectedBody = attachedRb;
+        }
+        else
+        {
+            fjR.enabled = false;
         }
 
         Vector3.Lerp(rightWristPos, leftWrist.position, 1f);
@@ -92,53 +132,38 @@ public class _Grab : MonoBehaviour
         leftCanGrab = Physics2D.OverlapCircle(leftHand.transform.position, handRadius, WhatIsGrab); // Bool checks if the overlapsphere collides with layer mask for both hands
         rightCanGrab = Physics2D.OverlapCircle(rightHand.transform.position, handRadius, WhatIsGrab);
         grounded = Physics2D.OverlapCircle(head.transform.position, bodyRadius, WhatIsGrab);
+        cogL = Physics2D.OverlapCircle(leftHand.transform.position, handRadius, WhatIsCog);
+        cogR = Physics2D.OverlapCircle(rightHand.transform.position, handRadius, WhatIsCog);
 
     }
 
     private void LeftClose()
     {
         leftHand.GetComponent<SpriteRenderer>().sprite = closed;
-
-        if (leftCanGrab)
-        {
-            leftGrabbing = true;
-        }
+        leftGrabbing = true;
     }
 
     private void RightClose()
     {
         rightHand.GetComponent<SpriteRenderer>().sprite = closed;
+        rightGrabbing = true;
 
-        if (rightCanGrab)
-        {
-            rightGrabbing = true;
-        }
     }
 
     // Opens the players hand and allows the rigid body to move again
     private void LeftOpen()
     {
         leftHand.GetComponent<SpriteRenderer>().sprite = open;
-        leftGrabbing = false;
-
-        if (rbL.constraints == RigidbodyConstraints2D.FreezePosition)
-        {
-            rbL.constraints = RigidbodyConstraints2D.None;
-        }
+        leftGrabbing = false;        
     }
 
     private void RightOpen()
     {
         rightHand.GetComponent<SpriteRenderer>().sprite = open;
         rightGrabbing = false;
-
-        if (rbR.constraints == RigidbodyConstraints2D.FreezePosition)
-        {
-            rbR.constraints = RigidbodyConstraints2D.None;
-        }
     }
 
-     // Draws a the overlap circle for each hand
+    // Draws a the overlap circle for each hand
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue; // Draws the left hand circle blue
