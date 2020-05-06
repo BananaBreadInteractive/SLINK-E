@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CogSprites
-  - Hands
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -16,10 +14,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Arms
-  - Body
-  - Grabbable
-  - Cogs
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -42,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: IgnoreLight
-    uniqueID: 1110991695
     locked: 0
