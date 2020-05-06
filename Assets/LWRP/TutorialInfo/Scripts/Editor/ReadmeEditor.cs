@@ -21,17 +21,7 @@ public class ReadmeEditor : Editor {
 	
 	static void SelectReadmeAutomatically()
 	{
-		if (!SessionState.GetBool(kShowedReadmeSessionStateName, false ))
-		{
-			var readme = SelectReadme();
-			SessionState.SetBool(kShowedReadmeSessionStateName, true);
-			
-			if (readme && !readme.loadedLayout)
-			{
-				LoadLayout();
-				readme.loadedLayout = true;
-			}
-		} 
+		
 	}
 	
 	static void LoadLayout()
@@ -42,24 +32,7 @@ public class ReadmeEditor : Editor {
 		method.Invoke(null, new object[]{Path.Combine(Application.dataPath, "TutorialInfo/Layout.wlt"), false});
 	}
 	
-	[MenuItem("Tutorial/Show Tutorial Instructions")]
-	static Readme SelectReadme() 
-	{
-		var ids = AssetDatabase.FindAssets("Readme t:Readme");
-		if (ids.Length == 1)
-		{
-			var readmeObject = AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(ids[0]));
-			
-			Selection.objects = new UnityEngine.Object[]{readmeObject};
-			
-			return (Readme)readmeObject;
-		}
-		else
-		{
-			Debug.Log("Couldn't find a readme");
-			return null;
-		}
-	}
+	
 	
 	protected override void OnHeaderGUI()
 	{
