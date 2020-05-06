@@ -5,34 +5,35 @@ using UnityEngine.UI;
 
 public class MenuAnimations : MonoBehaviour
 {
-    //[SerializeField] private List<Transform> cogs;  // Removed for prototype
-    public bool clockwise, counterclockwise;
-    private float rotSpeed = 10f;
+    public bool clockwise, counterclockwise, big, small;
+    private float rotSpeed;
 
     private void Start()
     {
-        //foreach (GameObject go in GameObject.FindGameObjectsWithTag("CogSprites")) // Removed for prototype
-        //{
-        //    Transform cogTransforms = go.GetComponent<Transform>();
-        //    cogs.Add(cogTransforms);
-        //}
+        if (big)
+        {
+            rotSpeed = 2f;
+        }
+        else
+        {
+            rotSpeed = 5f;
+        }
     }
 
     private void Update()
     {
-        //for (int i = 0; i < cogs.Count; i++)
-        //{
-
-        //}
+       
 
         if (clockwise)
         {
-            transform.Rotate(-Vector3.forward);
+            transform.Rotate(-Vector3.forward * rotSpeed);
+
+            
         }
 
         if (counterclockwise)
         {
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.forward * rotSpeed);
         }
     }
 

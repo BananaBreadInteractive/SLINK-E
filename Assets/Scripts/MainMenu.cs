@@ -133,9 +133,11 @@ public class MainMenu : MonoBehaviour
     public void Controller()
     {
         Debug.Log("Showing Controls");
+
+        //LeanTween.move();
     }
 
-    //Asks the player id they're sure about closing the game
+    //Asks the player if they're sure about closing the game
     public void AreYouSure()
     {
 
