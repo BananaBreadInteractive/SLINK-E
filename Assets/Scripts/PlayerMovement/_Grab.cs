@@ -115,7 +115,7 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
             }
             else
             {
-                rbR.AddForce(armVector);
+                rbR.AddForce(armVector * 200f);
             }
         }
 

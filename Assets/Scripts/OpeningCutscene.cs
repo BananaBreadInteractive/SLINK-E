@@ -17,12 +17,12 @@ public class OpeningCutscene : MonoBehaviour
         StartCoroutine(PlayVideo());
         StartCoroutine(PlaySound());
         videoPlayer.loopPointReached += CheckOver;
-        rawImage.color = new Color(1, 1, 1, 1);
+        rawImage.color = new Color(1, 1, 1, 0); //set to 1,1,1,1 for version with video
     }
 
     IEnumerator PlaySound()
     {
-        yield return new WaitForSeconds(2.75f);
+        yield return new WaitForSeconds(2.8f);
         _audioManager.Play("Intro");
     }
 
