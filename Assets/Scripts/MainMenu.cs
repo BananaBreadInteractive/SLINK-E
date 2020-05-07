@@ -10,9 +10,10 @@ public class MainMenu : MonoBehaviour
 {
     private Controls _controls; //The player controlls
     public Transform selectionTransform1, selectionTransform2, selectionTransform3; // The positions of the cog indicator
-    public GameObject indicator; // The cog indicator gameobject
+    public GameObject indicator, controlPage, exitPopUp; // The cog indicator gameobject
     private Transform indicatorPos; // The position of the cog indicator
     private int selectionNumber = 1; //Represents which menu option is selected e.g. 1 = play, 2 = controls & 3 = exit game
+    private int quit = 1;
     private float selected = 0; // Checks if the menu option has been selected/pressed
 
     public LineRenderer spring; //The spring between the bottom and top halves of the letter 'I'
@@ -41,8 +42,12 @@ public class MainMenu : MonoBehaviour
         _controls.Player.Enable();
         _controls.Player.DPadUp.started += ctx => Up();
         _controls.Player.DPadDown.started += ctx => Down();
-        _controls.Player.Select.performed += ctx => selected = _controls.Player.Select.ReadValue<float>();
+
+        _controls.Player.Select.started += ctx => selected = _controls.Player.Select.ReadValue<float>();
+        _controls.Player.Select.started += ctx => _audioManager.Play("MenuSwoosh1");
         _controls.Player.Select.canceled += ctx => selected = 0;
+
+        _controls.Player.B.started += ctx => GoBack();
 
     }
 
@@ -99,7 +104,7 @@ public class MainMenu : MonoBehaviour
                     Controller();
                     break;
                 case 3:
-                    ExitGame();
+                    AreYouSure();
                     break;
             }
         }
@@ -127,25 +132,51 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Playing Game");
+        SceneManager.LoadScene(1);
     }
     
-    //Shoes the controller pop-up
+    //Shows the controller pop-up
     public void Controller()
     {
-        Debug.Log("Showing Controls");
+        LeanTween.scale(controlPage, new Vector3(1,1,1), 0.3f);
+    }
 
-        //LeanTween.move();
+    public void GoBack()
+    {
+        LeanTween.scale(controlPage, new Vector3(0, 0, 0), 0.3f);
+        LeanTween.scale(exitPopUp, new Vector3(0, 0, 0), 0.3f);
+
+
+        if (controlPage.transform.localScale == new Vector3(1, 1, 1))
+        {
+            _audioManager.Play("MenuSwoosh2");
+        }
+
+        if(exitPopUp.transform.localScale == new Vector3(1, 1, 1))
+        {
+            _audioManager.Play("MenuSwoosh2");
+        }
     }
 
     //Asks the player if they're sure about closing the game
     public void AreYouSure()
     {
+        LeanTween.scale(exitPopUp, new Vector3(1, 1, 1), 0.3f);
 
+
+        if(exitPopUp.transform.localScale == new Vector3(1, 1, 1))
+        {
+            if (selected == 1)
+            {
+                ExitGame();
+            }
+        }
+        
     }
 
     //Closes application
     public void ExitGame()
     {
-        
+        Application.Quit();
     }
 }
