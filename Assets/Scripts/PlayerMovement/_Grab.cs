@@ -92,6 +92,9 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
 
         if (!grounded)
         {
+
+            head.AddForce(armVector * 300f);
+
             if (leftCanGrab || cogL)
             {
                 if(leftGrabbing)
