@@ -96,16 +96,16 @@
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\LWRP\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\_Grab.cs" />
-    <Compile Include="Assets\Scripts\Arms.cs" />
-    <Compile Include="Assets\Scripts\AttachPlayer.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Grab.cs" />
-    <Compile Include="Assets\Scripts\Hands.cs" />
     <Compile Include="Assets\Scripts\Input\Controls.cs" />
     <Compile Include="Assets\Scripts\Input\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuAnimations.cs" />
+    <Compile Include="Assets\Scripts\OpeningCutscene.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement\_Grab.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement\Arms.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement\Hands.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement\ResetPlayer.cs" />
     <Compile Include="Assets\Scripts\Sounds.cs" />
     <Compile Include="Assets\Scripts\test.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
@@ -141,9 +141,12 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
+    <None Include="Assets\XInputDotNet\Docs.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
+    <None Include="Assets\XInputDotNet\MITLicense.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\LeanTween\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -422,6 +425,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/Jacques' PC/Documents/Unity/SLINK-E/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="XInputDotNetPure">
+      <HintPath>C:/Users/Jacques' PC/Documents/Unity/SLINK-E/Assets/XInputDotNet/Plugins/XInputDotNetPure.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Unity/Hub/2019.2.5f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
