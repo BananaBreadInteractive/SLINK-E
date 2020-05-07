@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class _Grab : MonoBehaviour // Moves the players hands and allows the player to climb
 {
@@ -12,20 +13,25 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
 
     private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
     public Rigidbody2D head; // Rigidbody of the players head
-    public Rigidbody2D attachedRb;
-    private FixedJoint2D fjR, fjL;
+    public Rigidbody2D attachedRb; // The object the hands are grabbing
+    private FixedJoint2D fjR, fjL; // Fixed joint components of the hands
     public Transform leftWrist, rightWrist; // References the position of the wrists
     public Transform leftHand, rightHand; // References the position of the hands
 
 
-    private float handRadius = 0.2f; // Radius of the hands overlap circle
+    private float handRadius = 0.25f; // Radius of the hands overlap circle
     private float bodyRadius = 0.45f; // Radius of the ground check
     public LayerMask WhatIsGrab; // Layer mask to check what the player can grab 
     public LayerMask WhatIsCog;
+    public LayerMask WhatIsDeath;
     public bool leftCanGrab, rightCanGrab; // Checks to see if the players hands can grab a surface
     public bool leftGrabbing, rightGrabbing; // Checks if the grab buttons are being pressed
-    public bool grounded;
+    public bool grounded, dead;
     public bool cogL, cogR;
+
+    private PlayerIndex playerIndex;
+    private GamePadState state;
+    private GamePadState prevState;
 
     public Sprite open, closed; // Images for the open and closed claws
 
@@ -111,7 +117,7 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
             fjL.enabled = true;
             fjL.connectedBody = attachedRb;
         }
-        else
+        if(!leftGrabbing)
         {
             fjL.enabled = false;
         }
@@ -121,9 +127,18 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
             fjR.enabled = true;
             fjR.connectedBody = attachedRb;
         }
-        else
+        if(!rightGrabbing)
         {
             fjR.enabled = false;
+        }
+
+        if (dead)
+        {
+            GamePad.SetVibration(playerIndex, 0.5f, 0.5f);
+        }
+        else
+        {
+            GamePad.SetVibration(playerIndex, 0f, 0f);
         }
 
         Vector3.Lerp(rightWristPos, leftWrist.position, 1f);
@@ -132,6 +147,7 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
         leftCanGrab = Physics2D.OverlapCircle(leftHand.transform.position, handRadius, WhatIsGrab); // Bool checks if the overlapsphere collides with layer mask for both hands
         rightCanGrab = Physics2D.OverlapCircle(rightHand.transform.position, handRadius, WhatIsGrab);
         grounded = Physics2D.OverlapCircle(head.transform.position, bodyRadius, WhatIsGrab);
+        dead = Physics2D.OverlapCircle(head.transform.position, bodyRadius, WhatIsDeath);
         cogL = Physics2D.OverlapCircle(leftHand.transform.position, handRadius, WhatIsCog);
         cogR = Physics2D.OverlapCircle(rightHand.transform.position, handRadius, WhatIsCog);
 

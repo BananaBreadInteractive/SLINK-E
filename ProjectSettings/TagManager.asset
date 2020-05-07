@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CogSprites
   - Hands
+  - DeathFloor
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Body
   - Grabbable
   - Cogs
-  - 
-  - 
+  - DeathFloor
+  - SLINK
   - 
   - 
   - 

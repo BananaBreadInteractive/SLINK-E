@@ -17,19 +17,13 @@ public class Hands : MonoBehaviour // Moves the players hands in the direction o
     {
         if (collision.gameObject.tag == "CogSprites")
         {
-            Debug.Log("hand entered collider");
             grab.attachedRb = collision.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("hand exited collider");
 
-        //if (!grab.leftGrabbing || !grab.rightGrabbing)
-        //{
-        //    grab.attachedRb = null;
-        //}
         
     }
 }
