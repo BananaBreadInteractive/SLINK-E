@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Hands : MonoBehaviour // Moves the players hands in the direction of the left stick (and does a whole bunch of silly calculations)
 {
-    private _Grab grab;
+    private PlayerController player;
     private AudioManager _audioManager;
 
     private void Start()
     {
-        grab = FindObjectOfType<_Grab>();
+        player = FindObjectOfType<PlayerController>();
         _audioManager = FindObjectOfType<AudioManager>();
     }
 
@@ -18,7 +18,7 @@ public class Hands : MonoBehaviour // Moves the players hands in the direction o
     {
         if (collision.gameObject.tag == "CogSprites")
         {
-            grab.attachedRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            player.attachedRb = collision.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 
@@ -26,12 +26,12 @@ public class Hands : MonoBehaviour // Moves the players hands in the direction o
     {
         if(collision.gameObject.tag == "Grabbable" || collision.gameObject.tag == "CogSprites")
         {
-            if(grab.leftGrabbing && !grab.rightGrabbing)
+            if(player.leftGrabbing && !player.rightGrabbing)
             {
                 _audioManager.Play("Metal Clink 1");
             }
 
-            if (grab.rightGrabbing && !grab.leftGrabbing)
+            if (player.rightGrabbing && !player.leftGrabbing)
             {
                 _audioManager.Play("Metal Clink 2");
             }

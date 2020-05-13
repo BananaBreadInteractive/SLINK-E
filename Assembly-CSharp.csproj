@@ -102,12 +102,13 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuAnimations.cs" />
     <Compile Include="Assets\Scripts\OpeningCutscene.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement\_Grab.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Arms.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Hands.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\ResetPlayer.cs" />
     <Compile Include="Assets\Scripts\Sounds.cs" />
-    <Compile Include="Assets\Scripts\test.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

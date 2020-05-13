@@ -17,7 +17,7 @@ public class OpeningCutscene : MonoBehaviour
         StartCoroutine(PlayVideo());
         StartCoroutine(PlaySound());
         videoPlayer.loopPointReached += CheckOver;
-        rawImage.color = new Color(1, 1, 1, 0); //set to 1,1,1,1 for version with video
+        rawImage.color = new Color(1, 1, 1, 1); //set to 1,1,1,1 for version with video
     }
 
     IEnumerator PlaySound()
