@@ -1,13 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Arms
     - AudioManager
+    - Hands
     - MainMenu
     - MenuAnimations
     - OpeningCutscene
-    - TMPro.Examples.TMP_TextInfoDebugTool
+    - PauseMenu
+    - PlayerController
+    - ResetPlayer
     - TMPro.Examples.TMP_TextSelector_B
-    - test
+    - UIManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -26,6 +30,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Experimental.Rendering.LWRP.Light2D
     - UnityEngine.Experimental.Rendering.LWRP.Renderer2DData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
+    - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.TextMeshPro.dll:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
@@ -53,7 +58,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
-    Assets/Scenes/Level.unity:
+    Assets/Scenes/DemoLevel1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -72,6 +77,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 62
+      Script: {instanceID: 0}
     - Class: 70
       Script: {instanceID: 0}
     - Class: 81
@@ -81,12 +88,52 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 758}
+    - Class: 114
+      Script: {instanceID: 9872}
+    - Class: 114
+      Script: {instanceID: 10284}
+    - Class: 114
+      Script: {instanceID: 10366}
+    - Class: 114
+      Script: {instanceID: 10590}
+    - Class: 114
       Script: {instanceID: 10820}
+    - Class: 114
+      Script: {instanceID: 11038}
+    - Class: 114
+      Script: {instanceID: 11304}
+    - Class: 114
+      Script: {instanceID: 12344}
+    - Class: 114
+      Script: {instanceID: 12518}
+    - Class: 114
+      Script: {instanceID: 12656}
+    - Class: 114
+      Script: {instanceID: 12782}
+    - Class: 114
+      Script: {instanceID: 13122}
     - Class: 114
       Script: {instanceID: 13198}
     - Class: 114
+      Script: {instanceID: 13244}
+    - Class: 114
+      Script: {instanceID: 13362}
+    - Class: 114
+      Script: {instanceID: 13388}
+    - Class: 114
+      Script: {instanceID: 14216}
+    - Class: 114
       Script: {instanceID: 14316}
+    - Class: 114
+      Script: {instanceID: 70384}
+    - Class: 114
+      Script: {instanceID: 125930}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 120
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -94,9 +141,122 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    - Class: 231
+      Script: {instanceID: 0}
     - Class: 233
       Script: {instanceID: 0}
     - Class: 252
+      Script: {instanceID: 0}
+    - Class: 255
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/DemoLevel2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 62
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 758}
+    - Class: 114
+      Script: {instanceID: 9872}
+    - Class: 114
+      Script: {instanceID: 10284}
+    - Class: 114
+      Script: {instanceID: 10366}
+    - Class: 114
+      Script: {instanceID: 10590}
+    - Class: 114
+      Script: {instanceID: 10820}
+    - Class: 114
+      Script: {instanceID: 11038}
+    - Class: 114
+      Script: {instanceID: 12344}
+    - Class: 114
+      Script: {instanceID: 12518}
+    - Class: 114
+      Script: {instanceID: 12656}
+    - Class: 114
+      Script: {instanceID: 12782}
+    - Class: 114
+      Script: {instanceID: 13122}
+    - Class: 114
+      Script: {instanceID: 13244}
+    - Class: 114
+      Script: {instanceID: 13362}
+    - Class: 114
+      Script: {instanceID: 13388}
+    - Class: 114
+      Script: {instanceID: 14316}
+    - Class: 114
+      Script: {instanceID: 70384}
+    - Class: 114
+      Script: {instanceID: 125930}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 120
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    - Class: 231
+      Script: {instanceID: 0}
+    - Class: 233
+      Script: {instanceID: 0}
+    - Class: 255
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
       Script: {instanceID: 0}
     Assets/Scenes/Main Menu.unity:
     - Class: 1
@@ -128,8 +288,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9872}
     - Class: 114
-      Script: {instanceID: 10348}
-    - Class: 114
       Script: {instanceID: 10366}
     - Class: 114
       Script: {instanceID: 10590}
@@ -153,8 +311,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12782}
     - Class: 114
       Script: {instanceID: 12806}
-    - Class: 114
-      Script: {instanceID: 13074}
     - Class: 114
       Script: {instanceID: 13122}
     - Class: 114
@@ -372,12 +528,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: test
   - hash:
       serializedVersion: 2
       Hash: c80bc562de10fdbf8b2e9bcb89d80421
@@ -602,10 +752,10 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: b20d13e7aeb0a6064ed33325b45b1200
+      Hash: ae694caa2d6934612045b2c0760f68ca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: _Grab
+    className: PlayerController
   - hash:
       serializedVersion: 2
       Hash: 318eceb934b462316071551ba0414124
@@ -1650,8 +1800,21 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: cfb7639134fd12317a0891de0cdac9b0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIManager
+  - hash:
+      serializedVersion: 2
+      Hash: bd96b8e2620825e8e93499ad8ae82fea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PauseMenu
   platform: 5
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
-  - Assets/Scenes/Level.unity
+  - Assets/Scenes/DemoLevel1.unity
+  - Assets/Scenes/DemoLevel2.unity
   playerPath: C:/Users/Jacques' PC/Documents/Unity/SLINK-E_Build/E.exe
