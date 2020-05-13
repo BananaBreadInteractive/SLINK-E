@@ -7,6 +7,8 @@ TagManager:
   - CogSprites
   - Hands
   - DeathFloor
+  - Goal
+  - Grabbable
   layers:
   - Default
   - TransparentFX

@@ -89,6 +89,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Y"",
+                    ""type"": ""Button"",
+                    ""id"": ""74b550e4-349e-4039-8d77-c7225722be0b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -190,6 +198,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""D-PadRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15397550-5f11-4ae9-9cd1-745f36f9436d"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Y"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -207,6 +226,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_B = m_Player.FindAction("B", throwIfNotFound: true);
         m_Player_DPadLeft = m_Player.FindAction("D-PadLeft", throwIfNotFound: true);
         m_Player_DPadRight = m_Player.FindAction("D-PadRight", throwIfNotFound: true);
+        m_Player_Y = m_Player.FindAction("Y", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -265,6 +285,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_B;
     private readonly InputAction m_Player_DPadLeft;
     private readonly InputAction m_Player_DPadRight;
+    private readonly InputAction m_Player_Y;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -278,6 +299,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @B => m_Wrapper.m_Player_B;
         public InputAction @DPadLeft => m_Wrapper.m_Player_DPadLeft;
         public InputAction @DPadRight => m_Wrapper.m_Player_DPadRight;
+        public InputAction @Y => m_Wrapper.m_Player_Y;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -314,6 +336,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @DPadRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadRight;
                 @DPadRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadRight;
                 @DPadRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDPadRight;
+                @Y.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnY;
+                @Y.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnY;
+                @Y.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnY;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -345,6 +370,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @DPadRight.started += instance.OnDPadRight;
                 @DPadRight.performed += instance.OnDPadRight;
                 @DPadRight.canceled += instance.OnDPadRight;
+                @Y.started += instance.OnY;
+                @Y.performed += instance.OnY;
+                @Y.canceled += instance.OnY;
             }
         }
     }
@@ -360,5 +388,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnB(InputAction.CallbackContext context);
         void OnDPadLeft(InputAction.CallbackContext context);
         void OnDPadRight(InputAction.CallbackContext context);
+        void OnY(InputAction.CallbackContext context);
     }
 }

@@ -29,6 +29,7 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
     public bool leftGrabbing, rightGrabbing; // Checks if the grab buttons are being pressed
     public bool grounded, dead;
     public bool cogL, cogR;
+    public bool levelComplete;
 
     private PlayerIndex playerIndex;
     private GamePadState state;
@@ -145,10 +146,6 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
             rbR.constraints = RigidbodyConstraints2D.None;
         }
 
-        if (leftGrabbing)
-        {
-            //leftHand.transform.rotation = new Quaternion(0,0,90,0);
-        }
         if (cogL && leftGrabbing)
         {
             fjL.enabled = true;
@@ -162,11 +159,6 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
             gameObject.GetComponent<Rigidbody2D>().mass = 9f;
         }
 
-
-        if (rightGrabbing)
-        {
-            //rightHand.transform.rotation = new Quaternion(0, 0, 90, 0);
-        }
         if (cogR && rightGrabbing)
         {
             fjR.enabled = true;
@@ -179,10 +171,10 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
             gameObject.GetComponent<Rigidbody2D>().mass = 9f;
         }
 
-
         if (dead)
         {
             GamePad.SetVibration(playerIndex, 0.5f, 0.5f);
+            Debug.Log("vibrate");
         }
         else
         {
@@ -199,6 +191,14 @@ public class _Grab : MonoBehaviour // Moves the players hands and allows the pla
         cogL = Physics2D.OverlapCircle(leftHand.transform.position, cogRadius, WhatIsCog);
         cogR = Physics2D.OverlapCircle(rightHand.transform.position, cogRadius, WhatIsCog);
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D youWin)
+    {
+        if(youWin.gameObject.tag == "Goal")
+        {
+            Debug.Log("End Screen");
+        }
     }
 
     private void LeftClose()
