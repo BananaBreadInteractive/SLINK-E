@@ -1,32 +1,31 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Arms
     - AudioManager
-    - Hands
     - MainMenu
     - MenuAnimations
     - OpeningCutscene
-    - ResetPlayer
     - TMPro.Examples.TMP_TextInfoDebugTool
     - TMPro.Examples.TMP_TextSelector_B
-    - _Grab
     - test
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputActionAsset
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    Unity.RenderPipelines.Lightweight.Editor.dll:
+    - UnityEditor.Experimental.Rendering.LWRP.Path2D.ScriptablePathInspector
     Unity.RenderPipelines.Lightweight.Runtime.dll:
     - UnityEngine.Experimental.Rendering.LWRP.Light2D
     - UnityEngine.Experimental.Rendering.LWRP.Renderer2DData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
-    - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.TextMeshPro.dll:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
@@ -73,7 +72,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
-    - Class: 62
+    - Class: 70
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -82,20 +81,12 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 10278}
+      Script: {instanceID: 10820}
     - Class: 114
-      Script: {instanceID: 10814}
+      Script: {instanceID: 13198}
     - Class: 114
-      Script: {instanceID: 11032}
-    - Class: 114
-      Script: {instanceID: 12646}
-    - Class: 114
-      Script: {instanceID: 14302}
-    - Class: 114
-      Script: {instanceID: 31992}
+      Script: {instanceID: 14316}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 120
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -103,11 +94,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
-    - Class: 231
-      Script: {instanceID: 0}
     - Class: 233
       Script: {instanceID: 0}
-    - Class: 255
+    - Class: 252
       Script: {instanceID: 0}
     Assets/Scenes/Main Menu.unity:
     - Class: 1
@@ -137,51 +126,51 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9866}
+      Script: {instanceID: 9872}
     - Class: 114
-      Script: {instanceID: 10342}
+      Script: {instanceID: 10348}
     - Class: 114
-      Script: {instanceID: 10360}
+      Script: {instanceID: 10366}
     - Class: 114
-      Script: {instanceID: 10584}
+      Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 10814}
+      Script: {instanceID: 10820}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11304}
     - Class: 114
-      Script: {instanceID: 11364}
+      Script: {instanceID: 11370}
     - Class: 114
-      Script: {instanceID: 12304}
+      Script: {instanceID: 11716}
     - Class: 114
-      Script: {instanceID: 12332}
+      Script: {instanceID: 12316}
     - Class: 114
-      Script: {instanceID: 12508}
+      Script: {instanceID: 12344}
     - Class: 114
-      Script: {instanceID: 12636}
+      Script: {instanceID: 12518}
     - Class: 114
-      Script: {instanceID: 12772}
+      Script: {instanceID: 12646}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12782}
     - Class: 114
-      Script: {instanceID: 13062}
+      Script: {instanceID: 12806}
     - Class: 114
-      Script: {instanceID: 13112}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 13122}
     - Class: 114
-      Script: {instanceID: 13234}
+      Script: {instanceID: 13198}
     - Class: 114
-      Script: {instanceID: 13376}
+      Script: {instanceID: 13244}
     - Class: 114
-      Script: {instanceID: 13756}
+      Script: {instanceID: 13388}
     - Class: 114
-      Script: {instanceID: 13992}
+      Script: {instanceID: 13770}
     - Class: 114
-      Script: {instanceID: 14202}
+      Script: {instanceID: 14006}
     - Class: 114
-      Script: {instanceID: 14302}
+      Script: {instanceID: 14216}
     - Class: 114
-      Script: {instanceID: 55884}
+      Script: {instanceID: 14316}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -613,7 +602,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 385ad990069377669a2c68359d979f98
+      Hash: b20d13e7aeb0a6064ed33325b45b1200
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: _Grab
@@ -817,6 +806,12 @@ ScriptsOnlyBuild:
     className: PlayerInputEditor
   - hash:
       serializedVersion: 2
+      Hash: 528c9405055e7a76669f147c3c8e0ec7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OpeningCutscene
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -923,6 +918,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: AutoExposure
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: XInputTestCS
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1345,6 +1346,12 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: b18a711748a700482ac5e49ae567a5b2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ResetPlayer
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1643,24 +1650,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: XInputTestCS
-  - hash:
-      serializedVersion: 2
-      Hash: b18a711748a700482ac5e49ae567a5b2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ResetPlayer
-  - hash:
-      serializedVersion: 2
-      Hash: 528c9405055e7a76669f147c3c8e0ec7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: OpeningCutscene
   platform: 5
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
