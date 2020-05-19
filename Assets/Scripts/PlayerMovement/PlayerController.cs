@@ -203,19 +203,19 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
         {
             string sceneName = currentScene.name;
 
-            if(sceneName == "DemoLevel1")
+            if(sceneName == "Level1")
             {
                 if(selected == 1)
                 {
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(3);
                 }
             }
 
-            if (sceneName == "DemoLevel2")
+            if (sceneName == "Level2")
             {
                 if (selected == 1)
                 {
-                    SceneManager.LoadScene(0);
+                    SceneManager.LoadScene(1);
                 }
             }
         }

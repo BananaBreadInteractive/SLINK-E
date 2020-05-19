@@ -16,9 +16,6 @@ public class MainMenu : MonoBehaviour
     private int quit = 1;
     private float selected = 0; // Checks if the menu option has been selected/pressed
 
-    public LineRenderer spring; //The spring between the bottom and top halves of the letter 'I'
-    public GameObject top, bottom; // The bottom and top halves of the letter 'I'
-
     public Material playMat, controlMat, exitMat; // The three mennu options text materials
     private float glowVal = 0.3f; // The amount of glow on the menu options when selected
 
@@ -109,10 +106,6 @@ public class MainMenu : MonoBehaviour
                     break;
             }
         }
-
-        //Sets the position of the spring inbetween the top half and bottom half of the letter 'I'
-        spring.SetPosition(0, top.transform.localPosition);
-        spring.SetPosition(1, bottom.transform.localPosition);
     }
 
     //Called when Up on the D-pad is pushed, decreases the selection button value and plays sound
