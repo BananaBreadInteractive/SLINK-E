@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,7 +191,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -476,9 +476,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5804566055467704473}
-  - component: {fileID: 5804566055467704470}
-  - component: {fileID: 5804566055467704472}
-  - component: {fileID: 5804566055467704475}
   m_Layer: 0
   m_Name: v5
   m_TagString: Untagged
@@ -501,61 +498,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5804566055467704470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804566055467704471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cac07c81b226c04fa31a6f94f8a2a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 8c13ff369bae164479d253fd0495ef21, type: 3}
-  closed: {fileID: 21300000, guid: ed4ea7ef555b54f448133296753e1405, type: 3}
-  left: {fileID: 2755489700581724900}
-  right: {fileID: 2755489701045435479}
---- !u!114 &5804566055467704472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804566055467704471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bec83c9d2f993146a87b763f83c588a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  head: {fileID: 5804566055638005346}
-  leftHand: {fileID: 2755489700581724901}
-  rightHand: {fileID: 2755489701045435476}
-  WhatIsGrab:
-    serializedVersion: 2
-    m_Bits: 1335
-  leftCanGrab: 0
-  rightCanGrab: 0
-  grabbing: 0
---- !u!114 &5804566055467704475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804566055467704471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8190b146a21f945a6fa1830c767dc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHand: {fileID: 2755489700581724901}
-  rightHand: {fileID: 2755489701045435476}
-  leftOrigin: {fileID: 5804566054977681125}
-  rightOrigin: {fileID: 5804566054108188653}
-  leftSpring: {fileID: 5804566055415533619}
-  rightSpring: {fileID: 5804566056173485238}
 --- !u!1 &5804566055638005347
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +555,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

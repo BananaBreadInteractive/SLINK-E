@@ -34,6 +34,7 @@ public class MainMenu : MonoBehaviour
         indicatorPos = indicator.GetComponent<Transform>();
         indicatorPos.position = selectionTransform1.position;
         _audioManager = FindObjectOfType<AudioManager>();
+        Time.timeScale = 1;
     }
 
     //Listens for player inputs

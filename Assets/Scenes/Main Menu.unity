@@ -333,7 +333,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70631819}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3aad3a66f7030ca45bfe13d7757247b5, type: 3}
   m_Name: 
@@ -368,7 +368,7 @@ VideoPlayer:
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 0
-  m_SkipOnDrop: 1
+  m_SkipOnDrop: 0
   m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3424,7 +3424,6 @@ GameObject:
   - component: {fileID: 1588668603}
   - component: {fileID: 1588668605}
   - component: {fileID: 1588668604}
-  - component: {fileID: 1588668606}
   m_Layer: 5
   m_Name: Controller
   m_TagString: Untagged
@@ -3484,18 +3483,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588668602}
   m_CullTransparentMesh: 0
---- !u!114 &1588668606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1588668602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a97bd1b1810484183b3fda75e870c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1628228844
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,7 +3495,6 @@ GameObject:
   - component: {fileID: 1628228847}
   - component: {fileID: 1628228846}
   - component: {fileID: 1628228849}
-  - component: {fileID: 1628228848}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3654,29 +3640,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628228844}
   m_CullTransparentMesh: 0
---- !u!114 &1628228848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628228844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21256c5b62f346f18640dad779911e20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowCharacters: 0
-  ShowWords: 0
-  ShowLinks: 1
-  ShowLines: 0
-  ShowMeshBounds: 0
-  ShowTextBounds: 0
-  ObjectStats: 'Characters: 9   Words: 2   Spaces: 1   Sprites: 0   Links: 0
-
-    Lines: 1   Pages: 1'
-  m_TextComponent: {fileID: 1628228846}
-  m_Transform: {fileID: 1628228845}
 --- !u!114 &1628228849
 MonoBehaviour:
   m_ObjectHideFlags: 0

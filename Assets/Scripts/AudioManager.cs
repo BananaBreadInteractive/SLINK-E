@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
     // Public function which plays the audio
     public void Play(string name)
     {
-       Sounds s = Array.Find(sounds, sound => sound.name == name); //Lambda expression which finds the name of an audio clip from a string
-       s.source.Play();
+        Sounds s = Array.Find(sounds, sound => sound.name == name); //Lambda expression which finds the name of an audio clip from a string
+        s.source.Play();
     }
 }
