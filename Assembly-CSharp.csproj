@@ -140,6 +140,8 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuAnimations.cs" />
     <Compile Include="Assets\Scripts\OpeningCutscene.cs" />
+    <Compile Include="Assets\Scripts\Parallax.cs" />
+    <Compile Include="Assets\Scripts\parallaxing.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Arms.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Hands.cs" />

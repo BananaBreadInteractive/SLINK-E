@@ -9,6 +9,8 @@ TagManager:
   - DeathFloor
   - Goal
   - Grabbable
+  - Death_zone
+  - background
   layers:
   - Default
   - TransparentFX

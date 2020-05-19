@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using UnityEngine.UI;
 
@@ -42,7 +43,7 @@ public class OpeningCutscene : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        rawImage.enabled = false;
+        SceneManager.LoadScene("Main Menu");
     }
 
 }
