@@ -242,6 +242,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Factory 2D\Demo\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
     <None Include="Assets\Factory 2D\Demo\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+    <None Include="Assets\CityFactory\readme.txt" />
     <None Include="Assets\Factory 2D\Demo\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
     <None Include="Assets\Factory 2D\Demo\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
     <None Include="Assets\Factory 2D\Demo\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
