@@ -62,22 +62,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\AntialiasingEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\BloomEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\CreaseShadingEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\DepthOfFieldEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\EdgeDetectionEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\SunShaftsEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\TonemappingEditor.cs" />
-    <Compile Include="Assets\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\AntialiasingEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\BloomEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\CreaseShadingEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\DepthOfFieldEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\EdgeDetectionEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\SunShaftsEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\TonemappingEditor.cs" />
+    <Compile Include="Assets\Imported\Factory 2D\Demo\Standard Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+    <Compile Include="Assets\Imported\LWRP\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
-    <Compile Include="Assets\LWRP\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/Jacques' PC/Documents/Unity/SLINK-E/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
@@ -349,7 +349,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="XInputDotNetPure">
-      <HintPath>C:/Users/Jacques' PC/Documents/Unity/SLINK-E/Assets/XInputDotNet/Plugins/XInputDotNetPure.dll</HintPath>
+      <HintPath>C:/Users/Jacques' PC/Documents/Unity/SLINK-E/Assets/Imported/XInputDotNet/Plugins/XInputDotNetPure.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Jacques' PC/Documents/Unity/SLINK-E/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>

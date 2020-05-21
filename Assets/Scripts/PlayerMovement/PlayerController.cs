@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
     public Transform leftHand, rightHand; // References the position of the hands
 
 
-    private float handRadius = 0.3f; // Radius of the hands overlap circle
-    private float bodyRadius = 0.45f; // Radius of the ground check
+    private float handRadius = 0.35f; // Radius of the hands overlap circle
+    private float bodyRadius = 0.49f; // Radius of the ground check
     private float cogRadius = 1f; // Radius of the ground check
     public LayerMask WhatIsGrab; // Layer mask to check what the player can grab 
     public LayerMask WhatIsCog;
@@ -42,10 +42,14 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
     private AudioManager _audioManager;
     private UIManager _uiManager;
     private ResetPlayer _resetPlayer;
+    private LevelIntro _levelIntro;
 
     private void Awake()
     {
         _controls = new Controls();
+        _audioManager = FindObjectOfType<AudioManager>();
+        _audioManager.Play("MusicLoop");
+        _audioManager.Play("Ambience");
     }
 
     private void Start()
@@ -60,7 +64,7 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
         leftWristPos = leftWrist.position;
         rightWristPos = rightWrist.position;
 
-        _audioManager = FindObjectOfType<AudioManager>();
+        
         _uiManager = FindObjectOfType<UIManager>();
         _resetPlayer = FindObjectOfType<ResetPlayer>();
 
@@ -113,7 +117,7 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
         if (!grounded)
         {
 
-            head.AddForce(armVector * 300f);
+            head.AddForce(armVector * 600f);
 
             if (leftCanGrab || cogL)
             {

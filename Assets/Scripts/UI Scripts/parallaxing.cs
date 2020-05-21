@@ -7,13 +7,14 @@ public class parallaxing : MonoBehaviour
     public List<Transform> backgrounds;
     private float[] parallaxScales;
     public float smoothing = 1f; 
-    private Transform cam; 
+    public Transform cam; 
     private Vector3 previousCamPos; 
+    
                                    
     void Awake()
     {
         // set up camera the reference
-        cam = Camera.main.transform;
+        //cam = Camera.main.transform;
 
         //Add the background images that will make up the parallax using the background tag
         foreach (GameObject bg in GameObject.FindGameObjectsWithTag("background"))
@@ -60,5 +61,16 @@ public class parallaxing : MonoBehaviour
         {
             cam.transform.position += new Vector3(5, 0, 0) * Time.deltaTime;
         }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            cam.transform.position += new Vector3(0, 5, 0) * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            cam.transform.position += new Vector3(0, -5, 0) * Time.deltaTime;
+        }
+
     }
 }

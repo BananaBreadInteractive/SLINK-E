@@ -35,6 +35,11 @@ public class Hands : MonoBehaviour // Moves the players hands in the direction o
             {
                 _audioManager.Play("Metal Clink 2");
             }
+
+            if(!player.leftGrabbing || !player.rightGrabbing)
+            {
+                _audioManager.Play("Metal Clink 2");
+            }
         }
     }
 }
