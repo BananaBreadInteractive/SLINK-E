@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     public void ShowPopUp()
     {
         bg.SetActive(true);
-        LeanTween.scale(completePopUp, new Vector3(1, 1, 1), 0.5f);
+        LeanTween.scale(completePopUp, new Vector3(1, 1, 1), 0.8f);
     }
 
     public void ShowPause()

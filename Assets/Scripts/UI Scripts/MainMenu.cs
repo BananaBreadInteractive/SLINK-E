@@ -126,7 +126,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Playing Game");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     
     //Shows the controller pop-up
