@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     {
         bg.SetActive(true);
         LeanTween.scale(completePopUp, new Vector3(1, 1, 1), 0.8f);
+        player.enabled = false;
     }
 
     public void ShowPause()

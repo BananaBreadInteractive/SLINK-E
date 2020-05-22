@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
 
     private Rigidbody2D rbR, rbL; // Left and Right hand rigidbodies
     public Rigidbody2D head; // Rigidbody of the players head
-    public Rigidbody2D attachedRb; // The object the hands are grabbing
+    [HideInInspector] public Rigidbody2D attachedRb; // The object the hands are grabbing
     private FixedJoint2D fjR, fjL; // Fixed joint components of the hands
     public Transform leftWrist, rightWrist; // References the position of the wrists
     public Transform leftHand, rightHand; // References the position of the hands
