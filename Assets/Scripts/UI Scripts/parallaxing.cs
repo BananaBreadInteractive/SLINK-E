@@ -54,22 +54,22 @@ public class parallaxing : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            cam.transform.position += new Vector3(-5, 0, 0) * Time.deltaTime;
+            cam.transform.position += new Vector3(-10, 0, 0) * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            cam.transform.position += new Vector3(5, 0, 0) * Time.deltaTime;
+            cam.transform.position += new Vector3(10, 0, 0) * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            cam.transform.position += new Vector3(0, 5, 0) * Time.deltaTime;
+            cam.transform.position += new Vector3(0, 10, 0) * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            cam.transform.position += new Vector3(0, -5, 0) * Time.deltaTime;
+            cam.transform.position += new Vector3(0, -10, 0) * Time.deltaTime;
         }
 
     }

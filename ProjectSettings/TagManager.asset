@@ -11,6 +11,8 @@ TagManager:
   - Grabbable
   - Death_zone
   - background
+  - LeverCheck
+  - Lever
   layers:
   - Default
   - TransparentFX
