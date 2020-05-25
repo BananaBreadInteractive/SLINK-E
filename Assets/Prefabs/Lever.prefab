@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c070daf2ce7ff644d9b2258366aac161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levers: []
+  lever: {fileID: 0}
 --- !u!61 &209432726627943782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 7835995011665062580}
   - component: {fileID: 7504457359264287909}
   m_Layer: 0
-  m_Name: Off
+  m_Name: On
   m_TagString: LeverCheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 1195758161437025714}
   - component: {fileID: 2072656264235911791}
   m_Layer: 0
-  m_Name: On
+  m_Name: Off
   m_TagString: LeverCheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

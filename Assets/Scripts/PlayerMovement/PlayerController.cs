@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
         _controls = new Controls();
         _audioManager = FindObjectOfType<AudioManager>();
         _audioManager.Play("MusicLoop");
-        _audioManager.Play("Ambience");
+        //_audioManager.Play("Ambience");
     }
 
     private void Start()

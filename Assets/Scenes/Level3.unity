@@ -10153,6 +10153,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 177329947907529723, guid: f0188c886e68de14c9fd8722d0ff7d9c,
+        type: 3}
+      propertyPath: m_AngleLimits.m_LowerAngle
+      value: -26
+      objectReference: {fileID: 0}
     - target: {fileID: 177329947907529670, guid: f0188c886e68de14c9fd8722d0ff7d9c,
         type: 3}
       propertyPath: m_Layer
@@ -10163,20 +10168,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CogSprites
       objectReference: {fileID: 0}
-    - target: {fileID: 177329947907529723, guid: f0188c886e68de14c9fd8722d0ff7d9c,
+    - target: {fileID: 6828697291195805070, guid: f0188c886e68de14c9fd8722d0ff7d9c,
         type: 3}
-      propertyPath: m_AngleLimits.m_LowerAngle
-      value: -26
+      propertyPath: m_TagString
+      value: LeverCheck
       objectReference: {fileID: 0}
     - target: {fileID: 5408932508380255227, guid: f0188c886e68de14c9fd8722d0ff7d9c,
         type: 3}
       propertyPath: m_TagString
       value: LeverCheck
       objectReference: {fileID: 0}
-    - target: {fileID: 6828697291195805070, guid: f0188c886e68de14c9fd8722d0ff7d9c,
+    - target: {fileID: 177329947907529722, guid: f0188c886e68de14c9fd8722d0ff7d9c,
         type: 3}
-      propertyPath: m_TagString
-      value: LeverCheck
+      propertyPath: m_LinearDrag
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0188c886e68de14c9fd8722d0ff7d9c, type: 3}

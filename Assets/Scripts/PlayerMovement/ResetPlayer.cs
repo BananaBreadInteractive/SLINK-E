@@ -8,6 +8,7 @@ public class ResetPlayer : MonoBehaviour
     public Transform start;
     private Transform reset;
     private PlayerController player;
+    public GameObject virtualCamera;  
 
     private void Start()
     {
@@ -25,8 +26,10 @@ public class ResetPlayer : MonoBehaviour
 
     public IEnumerator Reset()
     {
+        virtualCamera.SetActive(false);
         yield return new WaitForSeconds(1.5f);
         player.hardReseting = false;
         gameObject.transform.position = reset.position;
+        virtualCamera.SetActive(true);
     }
 }

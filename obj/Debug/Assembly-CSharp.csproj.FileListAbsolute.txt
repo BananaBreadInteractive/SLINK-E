@@ -305,3 +305,4 @@ C:\Users\Jacques' PC\Documents\Unity\SLINK-E\obj\Debug\Assembly-CSharp.csproj.Co
 C:\Users\Jacques' PC\Documents\Unity\SLINK-E\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Jacques' PC\Documents\Unity\SLINK-E\obj\Debug\Assembly-CSharp.dll
 C:\Users\Jacques' PC\Documents\Unity\SLINK-E\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Jacques' PC\Documents\Unity\SLINK-E\Temp\bin\Debug\XInputDotNetPure.dll
