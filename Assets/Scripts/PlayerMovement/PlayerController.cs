@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
                 }
             }
 
-            if (sceneName == "Level")
+            if (sceneName == "Level2")
             {
                 if (selected == 1)
                 {

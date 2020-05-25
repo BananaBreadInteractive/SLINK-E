@@ -139,6 +139,7 @@
     <Compile Include="Assets\Scripts\Input\Controls.cs" />
     <Compile Include="Assets\Scripts\Input\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\LevelIntro.cs" />
+    <Compile Include="Assets\Scripts\LevelTwoIntro.cs" />
     <Compile Include="Assets\Scripts\Levers.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Arms.cs" />

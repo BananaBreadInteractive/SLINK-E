@@ -8,7 +8,7 @@ public class Levers : MonoBehaviour
     public GameObject conveyor1, conveyor2;
     public GameObject platforms, bridge, flange;
     private GameObject cam;
-    private GameObject virtualCamera;
+    public GameObject virtualCamera;
     private MovingPlatform _movingPlatform;
     private MenuAnimations _menuAnimations;
     private AudioManager _audio;
@@ -26,8 +26,6 @@ public class Levers : MonoBehaviour
 
         rb1 = lever1.GetComponent<Rigidbody2D>();
         rb2 = lever2.GetComponent<Rigidbody2D>();
-
-        virtualCamera = GameObject.Find("CM vcam1");
         cam = Camera.main.gameObject;
     }
 
@@ -63,6 +61,7 @@ public class Levers : MonoBehaviour
             {
                 if (activated)
                 {
+                    virtualCamera.SetActive(false);
                     PanRight();
                 }
             }
@@ -72,7 +71,6 @@ public class Levers : MonoBehaviour
     public void PanRight()
     { 
         Debug.Log("Paning to drawbridge");
-        virtualCamera.SetActive(false);
         LeanTween.move(cam, new Vector3(18.7f, 23, -10), 2).setOnComplete(RaiseBridge).setEase(curve);
     }
 
@@ -87,11 +85,11 @@ public class Levers : MonoBehaviour
     {
         Collider2D bridgeCollider = bridge.GetComponent<Collider2D>();
         bridgeCollider.isTrigger = false;
-        LeanTween.move(cam, virtualCamera.transform.position, 2).setOnComplete(RenableCam).setEase(curve);
+        LeanTween.move(cam, new Vector3(-38.6f, 23.2f, -10), 2).setOnComplete(RenableCam).setEase(curve);
     }
 
     public void RenableCam()
-    {
+    { 
         virtualCamera.SetActive(true);
     }
 
@@ -147,6 +145,5 @@ public class Levers : MonoBehaviour
     private void Update()
     {
        
-
     }
 }
