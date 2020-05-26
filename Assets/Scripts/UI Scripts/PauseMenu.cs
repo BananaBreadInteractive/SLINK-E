@@ -85,7 +85,7 @@ public class PauseMenu : MonoBehaviour
                     _uiManager.HidePause();
                     break;
                 case 2:
-                    SceneManager.LoadScene(0);
+                    SceneManager.LoadScene(1);
                     break;
             }
         }

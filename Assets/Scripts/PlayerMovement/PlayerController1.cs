@@ -123,8 +123,8 @@ public class PlayerController1 : MonoBehaviour // Moves the players hands and al
             {
                 if(leftGrabbing)
                 {
-                    rbL.AddForce(armVector * 500f);
-                    rbR.AddForce(armVector * 500f);
+                    rbL.AddForce(armVector * 400f);
+                    rbR.AddForce(armVector * 400f);
                 }
             }
             else
@@ -136,8 +136,8 @@ public class PlayerController1 : MonoBehaviour // Moves the players hands and al
             {
                 if (rightGrabbing)
                 {
-                    rbL.AddForce(armVector * 500f);
-                    rbR.AddForce(armVector * 500f);
+                    rbL.AddForce(armVector * 400f);
+                    rbR.AddForce(armVector * 400f);
                 }
             }
             else
@@ -219,7 +219,7 @@ public class PlayerController1 : MonoBehaviour // Moves the players hands and al
             {
                 if (selected == 1)
                 {
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(4);
                 }
             }
 
@@ -227,7 +227,7 @@ public class PlayerController1 : MonoBehaviour // Moves the players hands and al
             {
                 if (selected == 1)
                 {
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(5);
                 }
             }
         }

@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
             {
                 if (selected == 1)
                 {
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(5);
                 }
             }
         }
