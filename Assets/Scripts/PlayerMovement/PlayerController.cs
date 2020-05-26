@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
 
         if (grounded)
         {
-            head.AddForce(armVector * 200f);
+            head.AddForce(armVector * 400f);
         }
 
         if (!grounded)
@@ -216,6 +216,14 @@ public class PlayerController : MonoBehaviour // Moves the players hands and all
             }
 
             if (sceneName == "Level2")
+            {
+                if (selected == 1)
+                {
+                    SceneManager.LoadScene(4);
+                }
+            }
+
+            if (sceneName == "Level3")
             {
                 if (selected == 1)
                 {

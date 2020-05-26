@@ -111,13 +111,13 @@ public class PlayerController1 : MonoBehaviour // Moves the players hands and al
 
         if (grounded)
         {
-            head.AddForce(armVector * 200f);
+            head.AddForce(armVector * 400f);
         }
 
         if (!grounded)
         {
 
-            head.AddForce(armVector * 600f);
+            head.AddForce(armVector * 400f);
 
             if (leftCanGrab || cogL)
             {
@@ -216,6 +216,14 @@ public class PlayerController1 : MonoBehaviour // Moves the players hands and al
             }
 
             if (sceneName == "Level2")
+            {
+                if (selected == 1)
+                {
+                    SceneManager.LoadScene(1);
+                }
+            }
+
+            if (sceneName == "Level3")
             {
                 if (selected == 1)
                 {
