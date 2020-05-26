@@ -141,11 +141,15 @@
     <Compile Include="Assets\Scripts\LevelIntro.cs" />
     <Compile Include="Assets\Scripts\LevelTwoIntro.cs" />
     <Compile Include="Assets\Scripts\Levers.cs" />
+    <Compile Include="Assets\Scripts\Lights.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Arms.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Hands.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement\Hands1.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement\PlayerController1.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\ResetPlayer.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement\ResetPlayer1.cs" />
     <Compile Include="Assets\Scripts\Sounds.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\MenuAnimations.cs" />
