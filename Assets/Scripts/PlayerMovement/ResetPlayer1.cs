@@ -26,10 +26,13 @@ public class ResetPlayer1 : MonoBehaviour
 
     public IEnumerator Reset()
     {
-        virtualCamera.SetActive(false);
-        yield return new WaitForSeconds(1.5f);
-        player.hardReseting = false;
-        gameObject.transform.position = reset.position;
-        virtualCamera.SetActive(true);
+        if (!player.leftGrabbing && !player.rightGrabbing)
+        {
+            virtualCamera.SetActive(false);
+            yield return new WaitForSeconds(1.5f);
+            player.hardReseting = false;
+            gameObject.transform.position = reset.position;
+            virtualCamera.SetActive(true);
+        }
     }
 }
