@@ -15,7 +15,7 @@ using System.Collections.Generic;
 public class Lights : MonoBehaviour
 {
     [Tooltip("External light to flicker; you can leave this null if you attach script to a light")]
-    public new Light2D light;
+    public new UnityEngine.Experimental.Rendering.Universal.Light2D light;
     [Tooltip("Minimum random light intensity")]
     public float minIntensity = 0f;
     [Tooltip("Maximum random light intensity")]
@@ -47,7 +47,7 @@ public class Lights : MonoBehaviour
         // External or internal light?
         if (light == null)
         {
-            light = GetComponent<Light2D>();
+            light = GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
         }
     }
 
